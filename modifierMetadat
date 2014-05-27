@@ -1,0 +1,58 @@
+import os 
+
+#Constante des fichiers à ouvrir pour SOC16001
+metadata1 = r'C:/Program Files/Notepad++/notepad++.exe -x "I:/Social/Personnes_handicapees/SOC16001_aide_hebergement/metadata.xml"'
+metadata2 = r'C:/Program Files/Notepad++/notepad++.exe -x "I:/Social/Personnes_handicapees/SOC16002_compensation_handi/metadata.xml"'
+metadata3 = r'C:/Program Files/Notepad++/notepad++.exe -x "I:/Social/Personnes_handicapees/SOC16003_allocation_compensa/metadata.xml"'
+metadata4 = r'C:/Program Files/Notepad++/notepad++.exe -x "I:/Social/Personnes_handicapees/SOC16004_aide_menagere/metadata.xml"'
+list = [metadata1, metadata2, metadata3, metadata4] # On initialise la liste avec deux valeurs
+#list.append(metadata3) # On ajoute une troisieme valeur
+#for value in list: # On réalise une boucle sur toutes les valeurs de la liste
+    #print value # on affiche la valeur temporairement chargé dans value
+
+for value in list:
+    app1 = App.open(value)
+    if exists(Pattern("0bjtIIaj0bjt.png").similar(0.92)):    
+    find(Pattern("0bjtIIaj0bjt.png").similar(0.84))
+    hover(Pattern("0bjtIIaj0bjt.png").similar(0.84).targetOffset(-93,-19))
+
+#Fonction maintenir clique gauche
+    mouseDown(Button.LEFT)
+#Parametre de la fonction    
+    mouseMove(Env.getMouseLocation().offset(80, 0))
+#Fonction relacher clique gauche    
+    mouseUp(Button.LEFT)
+#Coller cette date    
+    paste('01/01/2013')                
+
+#Cas second d'execution si aucune date de mise a jour n'est presente
+else : 
+        find()
+        hover(Pattern("0bjtIIaj0bjt-1.png").similar(0.74).targetOffset(-92,-17))
+        click(Pattern("0bjtIIaj0bjt-1.png").similar(0.74).targetOffset(-92,-17))
+        paste('01/01/2013')
+
+#Test de verification de presence de la balise granularite avec commune; Si faux on passe au Else
+if exists("g1anul1i1Cum.png"):      
+    find("g1anul1i1Cum.png")
+    hover("g1anul1i1Cum.png")  
+                
+#Cas second d'execution si aucune date de mise a jour n'est presente
+else :
+        find(Pattern("g1ar1ul1i1.png").similar(0.80).targetOffset(-57,-1))
+        hover(Pattern("g1ar1ul1i1.png").similar(0.80).targetOffset(-57,-1))
+        click(Pattern("g1ar1ul1i1.png").similar(0.80).targetOffset(-57,-1))
+        #Fonction maintenir clique gauche
+        mouseDown(Button.LEFT)
+#Parametre de la fonction    
+        mouseMove(Env.getMouseLocation().offset(110, 0))
+#Fonction relacher clique gauche    
+        mouseUp(Button.LEFT)
+        paste('<granularite>Commune</granularite>')
+
+type('s', KeyModifier.CTRL)
+print(metadata1)
+
+app1.close()
+    
+
