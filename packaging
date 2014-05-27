@@ -1,0 +1,102 @@
+import os
+import sys
+import sys.path
+
+
+#Dossier dans lequel on travail
+dir = "I:/" 
+
+
+exists(Pattern("NomIBDonnss_.png").similar(0.29))
+exists(Pattern("0dzip.png").similar(0.84).targetOffset(-6,2))
+click(Pattern("0dzip.png").similar(0.84).targetOffset(-6,2))
+type(Key.DELETE)
+click(Pattern("Confirmation.png").targetOffset(71,46))
+exists(Pattern("xlszip-2.png").similar(0.79).targetOffset(-5,2))
+click(Pattern("xlszip-2.png").similar(0.79).targetOffset(-5,2))
+type(Key.DELETE)
+click(Pattern("1Confirmatio-1.png").targetOffset(67,43))
+click(Pattern("dsplzip-1.png").similar(0.77).targetOffset(-2,1))
+type(Key.DELETE)
+click(Pattern("1Confirmatio-2.png").targetOffset(71,44))
+exists(Pattern("5OC16UU22ip.png").similar(0.77))
+hover(Pattern("5OC16UU22ip-1.png").similar(0.77).targetOffset(-19,-1))
+rightClick(Pattern("5OC16UU22ip-1.png").similar(0.77).targetOffset(-19,-1))
+click("Renommer-1.png")
+click(Pattern("1393316921999.png").similar(0.52).targetOffset(18,4))
+paste('_old')
+
+
+
+wait(5)
+#Création du premier zip xls
+zip1 = input ("Entrer le nom du zip (SOC16001_xls.zip) :")
+print(zip1)
+rightClick(Pattern("IBDonnes_dsp.png").similar(0.74).targetOffset(40,0))
+
+click("Ncuvsau.png")
+
+click("Dossisrccmpr.png")
+
+wait("1392891431640.png")
+paste(zip1)
+doubleClick(Pattern("xls.png").similar(0.98).targetOffset(-2,3))
+exists(Pattern("aidc_hebcrge.png").similar(0.42))
+type('a', KeyModifier.CTRL)
+type('c', KeyModifier.CTRL)
+click(Pattern("Prcdcnta.png").similar(0.80).targetOffset(-25,2))
+rightClick("xlszip-1.png")
+click("Collar.png")
+doubleClick("1393318559962.png")  
+exists("1393249109603.png")
+rightClick(Pattern("1393249109603.png").targetOffset(5,-17))
+click("Supprimer-1.png")
+click(Pattern("13Confirmerl.png").targetOffset(-48,28))
+click(Pattern("Prcdcnta.png").similar(0.80).targetOffset(-25,2))
+wait(3)
+
+
+#Création du premier zip xls
+zip2 = input ("Entrer le nom du zip (SOC16001_dslp.zip) :")
+rightClick(Pattern("IBDonnes_dsp.png").similar(0.74).targetOffset(40,0))
+click("Ncuvsau.png")
+click("Dossisrccmpr.png")
+wait("1392891431640.png")
+paste(zip2)
+click(Pattern("IBDonnes_dsp.png").similar(0.74).targetOffset(40,0))
+doubleClick(Pattern("IBDonnes_dsp.png").similar(0.74).targetOffset(-117,0))
+exists(Pattern("SllC8C0mmUD8.png").similar(0.34))
+type('a', KeyModifier.CTRL)
+type('c', KeyModifier.CTRL)
+click(Pattern("Prcdcnta.png").similar(0.80).targetOffset(-25,2))
+rightClick(Pattern("dsplzip.png").similar(0.83).targetOffset(-8,3))
+click("Collar.png")
+
+
+#Création du zip final 
+zip3 = input ("Entrer le nom du zip (SOC16001.zip) :")
+rightClick(Pattern("IBDonnes_dsp.png").similar(0.74).targetOffset(40,0))
+click("Ncuvsau.png")
+click("Dossisrccmpr.png")
+wait("1392891431640.png")
+paste(zip3)
+
+hover(Pattern("uhQmetadatax.png").similar(0.76))
+click(Pattern("uhQmetadatax.png").similar(0.76))
+dragDrop(Pattern("uhQmetadatax.png").similar(0.76),Pattern("5OC16UU22ip-2.png").similar(0.84))
+wait(1)
+
+hover(Pattern("SOC160U1_dsp.png").similar(0.77))
+find(Pattern("SOC160U1_dsp.png").similar(0.77))
+dragDrop(Pattern("SOC160U1_dsp.png").similar(0.77),Pattern("5OC16UU22ip-2.png").similar(0.84).targetOffset(27,-1))
+wait(1)
+
+hover(Pattern("xlszip-2.png").similar(0.79).targetOffset(-5,2))
+find(Pattern("xlszip-2.png").similar(0.79).targetOffset(-5,2))
+dragDrop(Pattern("xlszip-2.png").similar(0.79).targetOffset(-5,2),Pattern("5OC16UU22ip-2.png").similar(0.84).targetOffset(31,1))
+
+
+
+
+
+
